@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  api:
+    build: .
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+      - MASTER_DB=master_db
+      - JWT_SECRET=supersecretchangeit
+      - JWT_ALGORITHM=HS256
+      - JWT_EXPIRE_MINUTES=120
+      - PORT=8000
+    ports:
+      - "8000:8000"
+volumes:
+  mongo-data:
