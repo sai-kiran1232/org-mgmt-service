@@ -169,4 +169,3 @@ org-mgmt-service/
 
 ---
 
-Made with ❤️ using FastAPI.
