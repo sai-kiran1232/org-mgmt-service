@@ -1,9 +1,9 @@
 # Organization Management Service (FastAPI + MongoDB)
 
-A reference implementation of the **Backend Intern Assignment** for a multi-tenant **Organization Management Service** built with **FastAPI**, **Motor (MongoDB)**, and **JWT** authentication.
+A backend service for managing multi-tenant organizations using FastAPI, MongoDB, and JWT authentication.
 
 ## ✨ Features
-- Create organizations with a dedicated dynamic collection (`org_<name>`)
+- Create organizations with a dedicated dynamic collection (`acme`)
 - Master database tracks organizations and admins
 - Secure admin creation with **bcrypt**-hashed passwords
 - JWT-based authentication for protected actions
@@ -12,6 +12,12 @@ A reference implementation of the **Backend Intern Assignment** for a multi-tena
 - Clean, modular structure; ready for Docker
 
 ## ▶️ Quick Start
+
+# Run locally
+uvicorn app.main:app --reload
+
+# Run via Docker
+docker compose up --build
 
 ### 1) Local (Python)
 ```bash
